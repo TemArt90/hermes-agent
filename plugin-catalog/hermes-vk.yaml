@@ -1,0 +1,28 @@
+name: hermes-vk
+repo: https://github.com/TemArt90/hermes-vk
+sha: 44d8c60510fc4b124a33f8c859bb527a99cc0d51
+version: "1.16.0"
+description: >-
+  VK (VKontakte) community-bot channel over the Bots Long Poll API: no public URL, no domain, no webhook,
+  so it works from networks that block or throttle inbound connections. Markdown renders into VK's
+  format_data under a type allowlist, pipe tables become headings plus bullets, photos, documents and voice
+  are exchanged through VK's own upload servers, and inline callback keyboards drive clarify /
+  exec-approval / slash-confirm prompts, a tickable checklist tool, and the /model, /reasoning and /fast
+  pickers. Disclosure — network: api.vk.com for every bot method (media upload and download hosts are the
+  ones VK returns, e.g. pu.vk.com, sun9-*.userapi.com); the optional personal-token path used only for
+  native video contacts oauth.vk.com / id.vk.com, and only when the operator runs the bundled helper
+  script. Credentials: env vars VK_TOKEN (community) and its optional sibling VK_USER_TOKEN. Persisted
+  state: one JSON file of checklist widgets under HERMES_HOME (atomic write, no credentials in it); picker
+  and status state is in memory. No telemetry, no usage reporting, no self-update. Access control is
+  Hermes' own allowlist plus pairing (VK_ALLOWED_USERS / VK_ALLOW_ALL_USERS), not an adapter-local list.
+maintainer: TemArt90
+tier: community
+category: platform
+docs_url: https://github.com/TemArt90/hermes-vk/blob/44d8c60510fc4b124a33f8c859bb527a99cc0d51/README.md
+capabilities:
+  provides_tools:
+    - vk_checklist
+  provides_hooks: []
+  provides_middleware: []
+  requires_env:
+    - VK_TOKEN
